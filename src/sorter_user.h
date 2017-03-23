@@ -6,6 +6,7 @@
 
 #include "sorter_par.h"
 #include "sorter_root.h"
+#include "sorter_treedata.h"
 
 class Sorter_user {
 
@@ -127,7 +128,8 @@ public:
                     std::array<double, 1024> &_drifttable_u2, int _num_wire_x1,
                     int _num_wire_u1, int _num_wire_x2, int _num_wire_u2,
                     struct parameters &_par_sorter, struct scalers &_sca_sorter,
-                    struct hist_parameters &_par_hist, Sorter_root &s_root);
+                    struct hist_parameters &_par_hist, Sorter_root &s_root,
+                    Sorter_treedata &s_treedata);
 
 private:
   /* ---------- maximum chi square ---------- */

@@ -27,7 +27,7 @@ public:
       std::array<int, 16> &_scaler_3, int &_CIrange,
       struct parameters &_par_sorter, struct scalers &_sca_sorter,
       struct hist_parameters &_par_hist, unsigned int &total_num_event,
-      Sorter_user &s_user, Sorter_root &s_root);
+      Sorter_user &s_user, Sorter_root &s_root, Sorter_treedata &s_treedata);
 
 private:
   int swt_mesg;

@@ -1,3 +1,4 @@
+#include "sorter_user.h"
 
 #include <algorithm>
 #include <cmath>
@@ -13,7 +14,7 @@
 #include "sorter_par.h"
 #include "sorter_root.h"
 #include "sorter_scaler.h"
-#include "sorter_user.h"
+#include "sorter_treedata.h"
 
 double Sorter_user::_abs(double in) {
   if (in < 0) {
@@ -1671,9 +1672,12 @@ int Sorter_user::user_analysis(
     std::array<double, 1024> &_drifttable_u2, int _num_wire_x1,
     int _num_wire_u1, int _num_wire_x2, int _num_wire_u2,
     struct parameters &_par_sorter, struct scalers &_sca_sorter,
-    struct hist_parameters &_par_hist, Sorter_root &s_root
+    struct hist_parameters &_par_hist, Sorter_root &s_root,
+    Sorter_treedata &s_treedata
 
     ) {
+
+  s_treedata.init_treeVariables();
 
   // drift-length
   std::array<double, 192> drift_x1 = {0.0}, drift_x2 = {0.0};
@@ -1895,6 +1899,20 @@ int Sorter_user::user_analysis(
                             _num_wire_x2, _num_wire_u2, Eout, success_X1,
                             success_U1, success_X2, success_U2, _par_hist);
   }
+
+  // std::cout << eventid << " " << Xfp << " " << Thfp << " " << Phfp <<
+  // std::endl;
+  s_treedata.t_eventID = eventid;
+  s_treedata.t_X1pos = Xfp;
+  s_treedata.t_X1th = Th1;
+  s_treedata.t_thetaFP = Thfp;
+  s_treedata.t_phiFP = Phfp;
+  s_treedata.t_Y1 = Y1;
+  s_treedata.t_Y2 = Y2;
+  s_treedata.t_thetaSCAT = Thtgt;
+  s_treedata.t_phiSCAT = Phtgt;
+
+  s_treedata.tree->Fill();
 
   return 0;
 }

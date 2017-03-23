@@ -21,6 +21,7 @@
 #include "sorter_read.h"
 #include "sorter_root.h"
 #include "sorter_scaler.h"
+#include "sorter_treedata.h"
 #include "sorter_user.h"
 #include "sorter_util.h"
 
@@ -271,6 +272,10 @@ int GR_Sorter::Run(std::string config_file_name, unsigned run_num) {
   hist4dt_x2 = {};
   hist4dt_u2 = {};
 
+  TTree *tree = new TTree("DATA", "Grand Raiden data");
+  Sorter_treedata s_treedata;
+  s_treedata.init_tree(tree);
+
   //==============================================
   // for online mode
   if (par_sorter.switch_online == TRUE) {
@@ -352,7 +357,7 @@ int GR_Sorter::Run(std::string config_file_name, unsigned run_num) {
                                drifttable_x2, drifttable_u2, scaler_0, scaler_1,
                                scaler_2, scaler_3, CIrange, par_sorter,
                                sca_sorter, par_hist, total_num_event, s_user,
-                               s_root);
+                               s_root, s_treedata);
 
           // std::cout << scalerfile<< std::endl;
           for (j = 0; j < 16; ++j) {
@@ -431,9 +436,9 @@ int GR_Sorter::Run(std::string config_file_name, unsigned run_num) {
       exit(1);
     }
   }
-  if (par_sorter.switch_ntuple != TRUE) {
-    s_root.write_root(par_sorter);
 
+  if (par_sorter.switch_ntuple != TRUE) {
+    s_root.write_root(par_sorter, s_treedata.tree);
   } else {
     // write_ntp(par_sorter.ntpfilename);
   }

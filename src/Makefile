@@ -14,4 +14,4 @@ all : gr_sorter
 
 clean : 
 	rm -rf *.o gr_sorter
-gr_sorter : gr_sorter.cc sorter_config.cc sorter_user.cc sorter_root.cc sorter_init.cc sorter_util.cc sorter_read.cc
+gr_sorter : gr_sorter.cc sorter_config.cc sorter_user.cc sorter_root.cc sorter_init.cc sorter_util.cc sorter_read.cc sorter_treedata.cc

@@ -11,6 +11,7 @@
 #include "sorter_par.h"
 #include "sorter_read.h"
 #include "sorter_scaler.h"
+#include "sorter_treedata.h"
 #include "sorter_user.h"
 
 int Sorter_read::get_fera_virtualstation_number(uint16_t word) {
@@ -173,7 +174,7 @@ void Sorter_read::read_data_blk(
     std::array<int, 16> &_scaler_3, int &_CIrange,
     struct parameters &_par_sorter, struct scalers &_sca_sorter,
     struct hist_parameters &_par_hist, unsigned int &total_num_event,
-    Sorter_user &s_user, Sorter_root &s_root) {
+    Sorter_user &s_user, Sorter_root &s_root, Sorter_treedata &s_treedata) {
 
   int i, j;
   unsigned int word_num_eventhead = 6;
@@ -872,11 +873,16 @@ void Sorter_read::read_data_blk(
     // -------------------------------------------------------------------
 
     if (flg_field_structure == 31 && !_par_sorter.flg_discard_event) {
+
+      // std::cout << "user Analysis" << std::endl;
       s_user.user_analysis(
           v3377_tdc_X1, v3377_tdc_U1, v3377_tdc_X2, v3377_tdc_U2,
           plastic_scintillator, tof, _drifttable_x1, _drifttable_u1,
           _drifttable_x2, _drifttable_u2, num_wire_x1, num_wire_u1, num_wire_x2,
-          num_wire_u2, _par_sorter, _sca_sorter, _par_hist, s_root);
+          num_wire_u2, _par_sorter, _sca_sorter, _par_hist, s_root, s_treedata);
+
+      // std::cout << s_treedata.t_eventID << std::endl;
+
     } else if (_par_sorter.flg_discard_event) {
       ++_par_sorter.num_discard_event;
       std::cout << "Info : Event discarded, block "
