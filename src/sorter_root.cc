@@ -998,10 +998,9 @@ void Sorter_root::fill_hist_user(
 
       h1 = find_hist_1D(std::to_string(user_histID), m_hist_user_1D);
       h1->Fill(_chisq_x1);
-    
+
       h2 = find_hist_2D(std::to_string(user_histID + 32), m_hist_user_2D);
       h2->Fill(_X1, _chisq_x1);
-      
     }
 
     h1 = find_hist_1D(std::to_string(user_histID + 10), m_hist_user_1D);
@@ -1176,8 +1175,7 @@ void Sorter_root::fill_hist_user(
     if (_par_sorter.switch_feret == 1) {
       // HFILL must be used since it is Profile histogram
 
-      h3 =
-          find_hist_Prof(std::to_string(user_histID + 232), m_hist_user_prof);
+      h3 = find_hist_Prof(std::to_string(user_histID + 232), m_hist_user_prof);
       h3->Fill(_feret[0] - _feret[1], _X1);
 
     } else {
@@ -1910,10 +1908,9 @@ void Sorter_root::open_hist_user(struct parameters &_par_sorter) {
   name_tmp = std::to_string(user_histID + 14);
   m_hist_user_1D.push_back(
       new TH1F(name_tmp.c_str(), "Y1    (mm)", 200, -100., 100.));
-        name_tmp = std::to_string(user_histID + 130);
-  m_hist_user_2D.push_back(
-      new TH2F(name_tmp.c_str(), "X1  vs Y1 (mm)",1200, -600., 600., 200, -100., 100.));
-
+  name_tmp = std::to_string(user_histID + 130);
+  m_hist_user_2D.push_back(new TH2F(name_tmp.c_str(), "X1  vs Y1 (mm)", 1200,
+                                    -600., 600., 200, -100., 100.));
 
   name_tmp = std::to_string(user_histID + 15);
   m_hist_user_1D.push_back(
@@ -1931,8 +1928,8 @@ void Sorter_root::open_hist_user(struct parameters &_par_sorter) {
   m_hist_user_1D.push_back(
       new TH1F(name_tmp.c_str(), "Y2    (mm)", 200, -100., 100.));
   name_tmp = std::to_string(user_histID + 131);
-  m_hist_user_2D.push_back(
-      new TH2F(name_tmp.c_str(), "X2  vs Y2 (mm)",1200, -600., 600., 200, -100., 100.));
+  m_hist_user_2D.push_back(new TH2F(name_tmp.c_str(), "X2  vs Y2 (mm)", 1200,
+                                    -600., 600., 200, -100., 100.));
 
   name_tmp = std::to_string(user_histID + 20);
   m_hist_user_1D.push_back(
@@ -1975,18 +1972,17 @@ void Sorter_root::open_hist_user(struct parameters &_par_sorter) {
   m_hist_user_1D.push_back(
       new TH1F(name_tmp.c_str(), "Ps1  - Ps2 (deg.)", 64, -5., 5.));
   name_tmp = std::to_string(user_histID + 32);
-  m_hist_user_2D.push_back(
-      new TH2F(name_tmp.c_str(), "Xfp  vs Chi square X1",  1200, -600., 600.,128, 0., 15.));    
-      name_tmp = std::to_string(user_histID + 33);
-  m_hist_user_2D.push_back(
-      new TH2F(name_tmp.c_str(), "Xfp  vs Chi square U1",  1200, -600., 600.,128, 0., 15.));    
-      name_tmp = std::to_string(user_histID + 34);
-  m_hist_user_2D.push_back(
-      new TH2F(name_tmp.c_str(), "Xfp  vs Chi square X2",  1200, -600., 600.,128, 0., 15.));    
-      name_tmp = std::to_string(user_histID + 35);
-  m_hist_user_2D.push_back(
-      new TH2F(name_tmp.c_str(), "Xfp  vs Chi square U2",  1200, -600., 600.,128, 0., 15.));    
-      
+  m_hist_user_2D.push_back(new TH2F(name_tmp.c_str(), "Xfp  vs Chi square X1",
+                                    1200, -600., 600., 128, 0., 15.));
+  name_tmp = std::to_string(user_histID + 33);
+  m_hist_user_2D.push_back(new TH2F(name_tmp.c_str(), "Xfp  vs Chi square U1",
+                                    1200, -600., 600., 128, 0., 15.));
+  name_tmp = std::to_string(user_histID + 34);
+  m_hist_user_2D.push_back(new TH2F(name_tmp.c_str(), "Xfp  vs Chi square X2",
+                                    1200, -600., 600., 128, 0., 15.));
+  name_tmp = std::to_string(user_histID + 35);
+  m_hist_user_2D.push_back(new TH2F(name_tmp.c_str(), "Xfp  vs Chi square U2",
+                                    1200, -600., 600., 128, 0., 15.));
 
   name_tmp = std::to_string(user_histID + 232);
   m_hist_user_prof.push_back(new TProfile(name_tmp.c_str(), "FERET L-R vs X1",
@@ -2149,12 +2145,9 @@ void Sorter_root::open_hist_user(struct parameters &_par_sorter) {
                                     500., 64, -10., 10.));
 
   //  normal
-  
-  
-  
 
-   name_tmp = std::to_string(user_histID + 104);
-   
+  name_tmp = std::to_string(user_histID + 104);
+
   m_hist_user_2D.push_back(new TH2F(name_tmp.c_str(), "X1 vs Thfp", 300, -600.,
                                     600., 200, -5.,
                                     5.)); // high reso
@@ -2162,8 +2155,7 @@ void Sorter_root::open_hist_user(struct parameters &_par_sorter) {
   m_hist_user_2D.push_back(new TH2F(name_tmp.c_str(), "X2 vs Thfp", 300, -600.,
                                     600., 200, -5.,
                                     5.)); // high reso
-  
-  
+
   name_tmp = std::to_string(user_histID + 106);
   m_hist_user_2D.push_back(new TH2F(name_tmp.c_str(), "Xfp vs Thfp", 300, -600.,
                                     600., 200, -5.,
@@ -2191,9 +2183,9 @@ void Sorter_root::open_hist_user(struct parameters &_par_sorter) {
   name_tmp = std::to_string(user_histID + 133);
   m_hist_user_2D.push_back(new TH2F(name_tmp.c_str(), "Xfp vs Phtgt", 9000,
                                     -600., 600., 100, -4., 4.));
-name_tmp = std::to_string(user_histID + 134);
-  m_hist_user_2D.push_back(new TH2F(name_tmp.c_str(), "Xfp vs Yfp gated ?",
-                                    256, -3., 3., 256, -3., 3.));
+  name_tmp = std::to_string(user_histID + 134);
+  m_hist_user_2D.push_back(new TH2F(name_tmp.c_str(), "Xfp vs Yfp gated ?", 256,
+                                    -3., 3., 256, -3., 3.));
   name_tmp = std::to_string(user_histID + 135);
   m_hist_user_2D.push_back(new TH2F(name_tmp.c_str(), "Thtgt vs Phtgt gated",
                                     256, -3., 3., 256, -3., 3.));
@@ -2416,10 +2408,12 @@ void Sorter_root::open_hist_wire() {
       new TH1F(name_tmp.c_str(), "RayID U2", 17, -0.5, 16.5));
 }
 
-void Sorter_root::write_root(struct parameters &_par_sorter) {
+void Sorter_root::write_root(struct parameters &_par_sorter, TTree *tree) {
 
   TFile *outfile = new TFile(_par_sorter.rootfilename.c_str(), "recreate");
   TList *hList = new TList();
+
+  tree->Write();
 
   for (auto &h : m_hist_conf_1D) {
     hList->Add(h);

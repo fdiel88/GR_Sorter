@@ -6,6 +6,7 @@
 #include "TH1F.h"
 #include "TH2F.h"
 #include "TProfile.h"
+#include "TTree.h"
 
 #include "sorter_histpar.h"
 #include "sorter_par.h"
@@ -124,7 +125,7 @@ public:
   void open_hist_system();
   void open_hist_user(struct parameters &_par_sorter);
   void open_hist_wire();
-  void write_root(struct parameters &_par_sorter);
+  void write_root(struct parameters &_par_sorter, TTree *tree);
 
 private:
   // std::vector<TH1F*> m_fera_hist;
