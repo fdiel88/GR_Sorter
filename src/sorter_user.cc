@@ -1842,6 +1842,8 @@ int Sorter_user::user_analysis(
 
   compare_vdc_xferet(eventid, X1, U1, X2, U2, Xferet, _sca_sorter);
 
+  // If histogram filling is switched of. The Analyser runs 2x faster!!!
+
   if (_par_sorter.switch_plot_high_reso == TRUE && eventid == 0) {
     s_root.fill_gatedwire(tdc_x1_cor, tdc_u1_cor, tdc_x2_cor, tdc_u2_cor);
   }
@@ -1903,14 +1905,64 @@ int Sorter_user::user_analysis(
   // std::cout << eventid << " " << Xfp << " " << Thfp << " " << Phfp <<
   // std::endl;
   s_treedata.t_eventID = eventid;
-  s_treedata.t_X1pos = Xfp;
-  s_treedata.t_X1th = Th1;
-  s_treedata.t_thetaFP = Thfp;
-  s_treedata.t_phiFP = Phfp;
+  s_treedata.t_X1 = X1;
+  s_treedata.t_U1 = U1;
+  s_treedata.t_X2 = X2;
+  s_treedata.t_U2 = U2;
   s_treedata.t_Y1 = Y1;
   s_treedata.t_Y2 = Y2;
+
+  s_treedata.t_X1pos = X1;
+  s_treedata.t_X1posC = Xfp;
+  s_treedata.t_Y1pos = Y1;
+  s_treedata.t_Y1posC = Yfp;
+
+  s_treedata.t_Th1 = Th1;
+  s_treedata.t_Ps1 = Ps1;
+  s_treedata.t_Th2 = Th2;
+  s_treedata.t_Ps2 = Ps2;
+
+  s_treedata.t_psiFP = Psfp;
+  s_treedata.t_thetaFP = Thfp;
+  s_treedata.t_phiFP = Phfp;
+
   s_treedata.t_thetaSCAT = Thtgt;
   s_treedata.t_phiSCAT = Phtgt;
+  s_treedata.t_Zttgt = Zttgt;
+
+  // s_treedata.t_tdc_x1 = _tdc_x1;
+  // s_treedata.t_tdc_u1 = _tdc_u1;
+  // s_treedata.t_tdc_x2 = _tdc_x2;
+  // s_treedata.t_tdc_u2 = _tdc_u2;
+  // s_treedata.t_tdc_x1_cor = tdc_x1_cor;
+  // s_treedata.t_tdc_u1_cor = tdc_u1_cor;
+  // s_treedata.t_tdc_x2_cor = tdc_x2_cor;
+  // s_treedata.t_tdc_u2_cor = tdc_u2_cor;
+
+  // s_treedata.t_Xferet = Xferet;
+  // s_treedata.t_fera = _fera;
+  // s_treedata.t_feret = _feret;
+  s_treedata.t_tof = tof = cor_tof = cor_tof;
+  s_treedata.t_scintillator_ave_1 = scintillator_ave_1;
+  s_treedata.t_scintillator_ave_2 = scintillator_ave_2;
+
+  s_treedata.t_chisq_x1 = chisq_x1;
+  s_treedata.t_chisq_u1 = chisq_u1;
+  s_treedata.t_chisq_x2 = chisq_x2;
+  s_treedata.t_chisq_u2 = chisq_u2;
+  s_treedata.t_num_wire_x1 = _num_wire_x1;
+  s_treedata.t_num_wire_u1 = _num_wire_u1;
+  s_treedata.t_num_wire_x2 = _num_wire_x2;
+  s_treedata.t_num_wire_u2 = _num_wire_u2;
+
+  s_treedata.t_Pout = Pout;
+  s_treedata.t_Eout = Eout;
+  s_treedata.t_Ex = Ex;
+
+  s_treedata.t_success_X1 = success_X1;
+  s_treedata.t_success_U1 = success_U1;
+  s_treedata.t_success_X2 = success_X2;
+  s_treedata.t_success_U2 = success_U2;
 
   s_treedata.tree->Fill();
 

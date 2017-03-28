@@ -9,188 +9,72 @@ int Sorter_treedata::init_tree(TTree *tree_i) {
 
   tree->Branch("eventID", &t_eventID, "t_eventID/I");
 
-  // t1->Branch("runtime",&t_runtime,"t_runtime/I");
-  // t1->Branch("evtcounter",&t_evtcounter,"t_evtcounter/I");
-  // t1->Branch("tdcsperevent",&t_tdcsperevent,"t_tdcsperevent/I");
-
-  // t1->Branch("triggerI",&t_triggerI,"t_triggerI/I");
-  // t1->Branch("triggerU",&t_triggerU,"t_triggerU/I");
-  // t1->Branch("CIU",&t_CIU,"t_CIU/I");
-  // t1->Branch("CII",&t_CII,"t_CII/I");
-
-  // t1->Branch("tof",&t_tof,"t_tof/I");
-  // t1->Branch("toftdc2",&t_toftdc2,"t_toftdc2/I");
-  // t1->Branch("toftdc3",&t_toftdc3,"t_toftdc3/I");
-  // t1->Branch("toftdc4",&t_toftdc4,"t_toftdc4/I");
-  // t1->Branch("toftdc5",&t_toftdc5,"t_toftdc5/I");
-  // t1->Branch("toftdc6",&t_toftdc6,"t_toftdc6/I");
-  // t1->Branch("toftdc7",&t_toftdc7,"t_toftdc7/I");
-
-  // t1->Branch("k600",&t_k600,"t_k600/I");
-
-  // t1->Branch("pad1",&t_pad1,"t_pad1/D");
-  // t1->Branch("pad2",&t_pad2,"t_pad2/D");
-  // t1->Branch("pad1hiP",&t_pad1hiP,"t_pad1hiP/D");
-  // t1->Branch("pad1lowP",&t_pad1lowP,"t_pad1lowP/D");
-  // t1->Branch("pad2hiP",&t_pad2hiP,"t_pad2hiP/D");
-  // t1->Branch("pad2lowP",&t_pad2lowP,"t_pad2lowP/D");
-  // t1->Branch("pad1hiPT",&t_pad1hiPT,"t_pad1hiPT/D");
-  // t1->Branch("pad1lowPT",&t_pad1lowPT,"t_pad1lowPT/D");
-  // t1->Branch("pad2hiPT",&t_pad2hiPT,"t_pad2hiPT/D");
-  // t1->Branch("pad2lowPT",&t_pad2lowPT,"t_pad2lowPT/D");
-
   tree->Branch("X1pos", &t_X1pos, "t_X1pos/D");
   tree->Branch("X1th", &t_X1th, "t_X1th/D");
-  // t1->Branch("X1flag",&t_X1flag,"t_X1flag/I");
-  // t1->Branch("X1chisq",&t_X1chisq,"t_X1chisq/D");
-  // t1->Branch("X1res0",&t_X1res0,"t_X1res0/D");
-  // t1->Branch("X1res1",&t_X1res1,"t_X1res1/D");
-  // t1->Branch("X1hits",&t_X1hits,"t_X1hits/I");
-  // t1->Branch("X1effID",&t_X1effID,"t_X1effID/D");
-  // t1->Branch("X1effall",&t_X1effall,"t_X1effall/D");
-  // t1->Branch("X1effdt",&t_X1effdt,"t_X1effdt/D");
-  // t1->Branch("X1effgroup",&t_X1effgroup,"t_X1effgroup/D");
-  // t1->Branch("X1effgood",&t_X1effgood,"t_X1effgood/D");
-  //#ifdef _VDCRESCALCS
-  // t1->Branch("X1res2",&t_X1res2,"t_X1res2/D");
-  // t1->Branch("X1res3",&t_X1res3,"t_X1res3/D");
-  // t1->Branch("X1res4",&t_X1res4,"t_X1res4/D");
-  // t1->Branch("X1res5",&t_X1res5,"t_X1res5/D");
-  // t1->Branch("X1res6",&t_X1res6,"t_X1res6/D");
-  // t1->Branch("X1res7",&t_X1res7,"t_X1res7/D");
-  // t1->Branch("X1res8",&t_X1res8,"t_X1res8/D");
-  //#endif
-  // #ifdef _FULLANALYSIS
-  // t1->Branch("nX1wiresUsed",&t_nX1wiresUsed,"t_nX1wiresUsed/I");
-  // t1->Branch("X1doublewires",&t_X1doublewires,"t_X1doublewires/I");
-  // t1->Branch("X1multiplemin",&t_X1multiplemin,"t_X1multiplemin/I");
-  // t1->Branch("X1TimeDiff",&t_X1TimeDiff,"t_X1TimeDiff/D");
-  // t1->Branch("X1wireUsed",t_X1wireUsed,"t_X1wireUsed[t_nX1wiresUsed]/I");
-  // t1->Branch("X1distUsed",t_X1distUsed,"t_X1distUsed[t_nX1wiresUsed]/D");
-  //#endif
 
-  // t1->Branch("U1pos",&t_U1pos,"t_U1pos/D");
-  // t1->Branch("U1th",&t_U1th,"t_U1th/D");
-  // t1->Branch("U1flag",&t_U1flag,"t_U1flag/I");
-  // t1->Branch("U1chisq",&t_U1chisq,"t_U1chisq/D");
-  // t1->Branch("U1res0",&t_U1res0,"t_U1res0/D");
-  // t1->Branch("U1res1",&t_U1res1,"t_U1res1/D");
-  // t1->Branch("U1effID",&t_U1effID,"t_U1effID/D");
-  // t1->Branch("U1hits",&t_U1hits,"t_U1hits/I");
-  // t1->Branch("U1effall",&t_U1effall,"t_U1effall/D");
-  // t1->Branch("U1effdt",&t_U1effdt,"t_U1effdt/D");
-  // t1->Branch("U1effgroup",&t_U1effgroup,"t_U1effgroup/D");
-  // t1->Branch("U1effgood",&t_U1effgood,"t_U1effgood/D");
-  //#ifdef _VDCRESCALCS
-  // t1->Branch("U1res2",&t_U1res2,"t_U1res2/D");
-  // t1->Branch("U1res3",&t_U1res3,"t_U1res3/D");
-  // t1->Branch("U1res4",&t_U1res4,"t_U1res4/D");
-  // t1->Branch("U1res5",&t_U1res5,"t_U1res5/D");
-  // t1->Branch("U1res6",&t_U1res6,"t_U1res6/D");
-  // t1->Branch("U1res7",&t_U1res7,"t_U1res7/D");
-  // t1->Branch("U1res8",&t_U1res8,"t_U1res8/D");
-  //#endif
-  //#ifdef _FULLANALYSIS
-  // t1->Branch("nU1wiresUsed",&t_nU1wiresUsed,"t_nU1wiresUsed/I");
-  // t1->Branch("U1doublewires",&t_U1doublewires,"t_U1doublewires/I");
-  // t1->Branch("U1multiplemin",&t_U1multiplemin,"t_U1multiplemin/I");
-  // t1->Branch("U1wireUsed",t_U1wireUsed,"t_U1wireUsed[t_nU1wiresUsed]/I");
-  //#endif
-
-  // t1->Branch("X2pos",&t_X2pos,"t_X2pos/D");
-  // t1->Branch("X2th",&t_X2th,"t_X2th/D");
-  // t1->Branch("X2flag",&t_X2flag,"t_X2flag/I");
-  // t1->Branch("X2chisq",&t_X2chisq,"t_X2chisq/D");
-  // t1->Branch("X2res0",&t_X2res0,"t_X2res0/D");
-  // t1->Branch("X2res1",&t_X2res1,"t_X2res1/D");
-  // t1->Branch("X2effID",&t_X2effID,"t_X2effID/D");
-  // t1->Branch("X2hits",&t_X2hits,"t_X2hits/I");
-  // t1->Branch("X2effall",&t_X2effall,"t_X2effall/D");
-  // t1->Branch("X2effdt",&t_X2effdt,"t_X2effdt/D");
-  // t1->Branch("X2effgroup",&t_X2effgroup,"t_X2effgroup/D");
-  // t1->Branch("X2effgood",&t_X2effgood,"t_X2effgood/D");
-  //#ifdef _VDCRESCALCS
-  // t1->Branch("X2res2",&t_X2res2,"t_X2res2/D");
-  // t1->Branch("X2res3",&t_X2res3,"t_X2res3/D");
-  // t1->Branch("X2res4",&t_X2res4,"t_X2res4/D");
-  // t1->Branch("X2res5",&t_X2res5,"t_X2res5/D");
-  // t1->Branch("X2res6",&t_X2res6,"t_X2res6/D");
-  // t1->Branch("X2res7",&t_X2res7,"t_X2res7/D");
-  // t1->Branch("X2res8",&t_X2res8,"t_X2res8/D");
-  //#endif
-  //#ifdef _FULLANALYSIS
-  // t1->Branch("nX2wiresUsed",&t_nX2wiresUsed,"t_nX2wiresUsed/I");
-  // t1->Branch("X2doublewires",&t_X2doublewires,"t_X2doublewires/I");
-  // t1->Branch("X2multiplemin",&t_X2multiplemin,"t_X2multiplemin/I");
-  // t1->Branch("X2wireUsed",t_X2wireUsed,"t_X2wireUsed[t_nX2wiresUsed]/I");
-  //#endif
-
-  // t1->Branch("U2pos",&t_U2pos,"t_U2pos/D");
-  // t1->Branch("U2th",&t_U2th,"t_U2th/D");
-  // t1->Branch("U2flag",&t_U2flag,"t_U2flag/I");
-  // t1->Branch("U2chisq",&t_U2chisq,"t_U2chisq/D");
-  // t1->Branch("U2res0",&t_U2res0,"t_U2res0/D");
-  // t1->Branch("U2res1",&t_U2res1,"t_U2res1/D");
-  // t1->Branch("U2effID",&t_U2effID,"t_U2effID/D");
-  // t1->Branch("U2hits",&t_U2hits,"t_U2hits/I");
-  // t1->Branch("U2effall",&t_U2effall,"t_U2effall/D");
-  // t1->Branch("U2effdt",&t_U2effdt,"t_U2effdt/D");
-  // t1->Branch("U2effgroup",&t_U2effgroup,"t_U2effgroup/D");
-  // t1->Branch("U2effgood",&t_U2effgood,"t_U2effgood/D");
-  //#ifdef _VDCRESCALCS
-  // t1->Branch("U2res2",&t_U2res2,"t_U2res2/D");
-  // t1->Branch("U2res3",&t_U2res3,"t_U2res3/D");
-  // t1->Branch("U2res4",&t_U2res4,"t_U2res4/D");
-  // t1->Branch("U2res5",&t_U2res5,"t_U2res5/D");
-  // t1->Branch("U2res6",&t_U2res6,"t_U2res6/D");
-  // t1->Branch("U2res7",&t_U2res7,"t_U2res7/D");
-  // t1->Branch("U2res8",&t_U2res8,"t_U2res8/D");
-  //#endif
-  //#ifdef _FULLANALYSIS
-  // t1->Branch("nU2wiresUsed",&t_nU2wiresUsed,"t_nU2wiresUsed/I");
-  // t1->Branch("U2doublewires",&t_U2doublewires,"t_U2doublewires/I");
-  // t1->Branch("U2multiplemin",&t_U2multiplemin,"t_U2multiplemin/I");
-  // t1->Branch("U2wireUsed",t_U2wireUsed,"t_U2wireUsed[t_nU2wiresUsed]/I");
-  //#endif
-
-  tree->Branch("thetaFP", &t_thetaFP, "t_thetaFP/D");
+  // tree->Branch("thetaFP", &t_thetaFP, "t_thetaFP/D");
   // t1->Branch("thetaFPx",&t_thetaFPx,"t_thetaFPx/D");
-  tree->Branch("phiFP", &t_phiFP, "t_phiFP/D");
+  // tree->Branch("phiFP", &t_phiFP, "t_phiFP/D");
   tree->Branch("Y1", &t_Y1, "t_Y1/D");
   tree->Branch("Y2", &t_Y2, "t_Y2/D");
-  // t1->Branch("pulser",&t_pulser,"t_pulser/I");
-  // t1->Branch("X1posC",&t_X1posC,"t_X1posC/D");
-  // t1->Branch("X1posO",&t_X1posO,"t_X1posO/D");
-  // t1->Branch("Ex",&t_Ex,"t_Ex/D");
-  // t1->Branch("ExC",&t_ExC,"t_ExC/D");
-  // t1->Branch("T3",&t_T3,"t_T3/D");
-  // t1->Branch("rigidity3",&t_rigidity3,"t_rigidity3/D");
-  // t1->Branch("theta",&t_theta,"t_theta/D");
+
+  tree->Branch("X1pos", &t_X1pos, "t_X1pos/D");
+  tree->Branch("X1posC", &t_X1posC, "t_X1posC/D");
+  tree->Branch("Y1pos", &t_Y1pos, "t_Y1pos/D");
+  tree->Branch("Y1posC", &t_Y1posC, "t_Y1posC/D");
+
+  tree->Branch("Th1", &t_Th1, "t_Th1/D");
+  tree->Branch("Ps1", &t_Ps1, "t_Ps1/D");
+  tree->Branch("Th2", &t_Th2, "t_Th2/D");
+  tree->Branch("Ps2", &t_Ps2, "t_Ps2/D");
+
+  tree->Branch("psiFP", &t_psiFP, "t_psiFP/D");
+  tree->Branch("thetaFP", &t_thetaFP, "t_thetaFP/D");
+  tree->Branch("phiFP", &t_phiFP, "t_phiFP/D");
+
   tree->Branch("thetaSCAT", &t_thetaSCAT, "t_thetaSCAT/D");
   tree->Branch("phiSCAT", &t_phiSCAT, "t_phiSCAT/D");
+  tree->Branch("ztSCAT", &t_Zttgt, "t_Zttgt/D");
 
-  //#ifdef _POLARIZATION
-  // t1->Branch("polu", &t_polu, "t_polu/I"); // PR153, polarized beam
-  // t1->Branch("pold", &t_pold, "t_pold/I"); // PR153, polarized beam
-  //#endif
+  // tree->Branch("tdc_x1", &t_tdc_x1, "t_tdc_x1/D");
+  // tree->Branch("tdc_u1", &t_tdc_u1, "t_tdc_u1/D");
+  // tree->Branch("tdc_x2", &t_tdc_x2, "t_tdc_x2/D");
+  // tree->Branch("tdc_u2", &t_tdc_u2, "t_tdc_u2/D");
+  // tree->Branch("x1_cor", &t_tdc_x1_cor, "t_tdc_x1_cor/D");
+  // tree->Branch("u1_cor", &t_tdc_u1_cor, "t_tdc_u1_cor/D");
+  // tree->Branch("x2_cor", &t_tdc_x2_cor, "t_tdc_x2_cor/D");
+  // tree->Branch("u2_cor", &t_tdc_u2_cor, "t_tdc_u2_cor/D");
 
-  //#ifdef _MOVIE
-  // t1->Branch("nX1wires", &t_nX1wires,
-  //           "t_nX1wires/I"); // for dynamic size of X1dt in tree
-  // t1->Branch("nU1wires", &t_nU1wires,
-  //           "t_nU1wires/I"); // for dynamic size of U1dt in tree
-  // t1->Branch("nX2wires", &t_nX2wires,
-  //           "t_nX2wires/I"); // for dynamic size of X2dt in tree
-  // t1->Branch("nU2wires", &t_nU2wires,
-  //           "t_nU2wires/I"); // for dynamic size of X2dt in tree
-  // t1->Branch("X1dt", t_X1dt, "t_X1dt[t_nX1wires]/D");
-  // t1->Branch("U1dt", t_U1dt, "t_U1dt[t_nU1wires]/D");
-  // t1->Branch("X2dt", t_X2dt, "t_X2dt[t_nX2wires]/D");
-  // t1->Branch("U2dt", t_U2dt, "t_U2dt[t_nU2wires]/D");
-  // t1->Branch("X1wire", t_X1wire, "t_X1wire[t_nX1wires]/I");
-  // t1->Branch("U1wire", t_U1wire, "t_U1wire[t_nU1wires]/I");
-  // t1->Branch("X2wire", t_X2wire, "t_X2wire[t_nX2wires]/I");
-  // t1->Branch("U2wire", t_U2wire, "t_U2wire[t_nU2wires]/I");
+  // tree->Branch("Xferet", &t_Xferet, "t_Xferet\D");
+  // tree->Branch("fera", &t_fera, "t_fera\D");
+  // tree->Branch("feret", &t_feret, "t_feret\D");
+  tree->Branch("tof", &t_tof, "t_tof/D");
+  tree->Branch("cor_tof", &t_cor_tof, "t_cor_tof/D");
+  tree->Branch("scintillator_ave_1", &t_scintillator_ave_1,
+               "scintillator_ave_1/D");
+  tree->Branch("scintillator_ave_1", &t_scintillator_ave_1,
+               "scintillator_ave_1/D");
+  tree->Branch("scintillator_ave_2", &t_scintillator_ave_2,
+               "scintillator_ave_2/D");
+  tree->Branch("scintillator_ave_2", &t_scintillator_ave_2,
+               "scintillator_ave_2/D");
+  tree->Branch("chisq_x1", &t_chisq_x1, "t_chisq_x1/D");
+  tree->Branch("chisq_u1", &t_chisq_u1, "t_chisq_u1/D");
+  tree->Branch("chisq_x2", &t_chisq_x2, "t_chisq_x2/D");
+  tree->Branch("chisq_u2", &t_chisq_u2, "t_chisq_u2/D");
+  tree->Branch("num_wire_x1", &t_num_wire_x1, "t_num_wire_x1/D");
+  tree->Branch("num_wire_u1", &t_num_wire_u1, "t_num_wire_u1/D");
+  tree->Branch("num_wire_x2", &t_num_wire_x2, "t_num_wire_x2/D");
+  tree->Branch("num_wire_u2", &t_num_wire_u2, "t_num_wire_u2/D");
+
+  tree->Branch("Pout", &t_Pout, "t_Pout/D");
+  tree->Branch("Eout", &t_Eout, "t_Eout/D");
+  tree->Branch("Ex", &t_Ex, "t_Ex/D");
+
+  tree->Branch("success_X1", &t_success_X1, "t_success_X1/D");
+  tree->Branch("success_U1", &t_success_U1, "t_success_U1/D");
+  tree->Branch("success_X2", &t_success_X2, "t_success_X2/D");
+  tree->Branch("success_U2", &t_success_U2, "t_success_U2/D");
 
   return 1;
 }
@@ -353,6 +237,60 @@ int Sorter_treedata::init_treeVariables() {
   // t_polu = 0;
   // t_pold = 0;
   //#endif
+
+  t_eventID = 0.0;
+  t_X1 = 0.0;
+  t_U1 = 0.0;
+  t_X2 = 0.0;
+  t_U2 = 0.0;
+  t_Y1 = 0.0;
+  t_Y2 = 0.0;
+  t_X1pos = 0.0;
+  t_X1posC = 0.0;
+  t_Y1pos = 0.0;
+  t_Y1posC = 0.0;
+  t_Th1 = 0.0;
+  t_Ps1 = 0.0;
+  t_Th2 = 0.0;
+  t_Ps2 = 0.0;
+  t_psiFP = 0.0;
+  t_thetaFP = 0.0;
+  t_phiFP = 0.0;
+  t_thetaSCAT = 0.0;
+  t_phiSCAT = 0.0;
+  t_Zttgt = 0.0;
+  // t_tdc_x1 = 0.0;
+  // t_tdc_u1 = 0.0;
+  // t_tdc_x2 = 0.0;
+  // t_tdc_u2 = 0.0;
+  // t_tdc_x1_cor = 0.0;
+  // t_tdc_u1_cor = 0.0;
+  // t_tdc_x2_cor = 0.0;
+  // t_tdc_u2_cor = 0.0;
+  // t_Xferet = 0.0;
+  // t_fera = 0.0;
+  // t_feret = 0.0;
+  t_tof = 0.0;
+  t_cor_tof = 0.0;
+  t_scintillator_ave_1 = 0.0;
+  t_scintillator_ave_1 = 0.0;
+  t_scintillator_ave_2 = 0.0;
+  t_scintillator_ave_2 = 0.0;
+  t_chisq_x1 = 0.0;
+  t_chisq_u1 = 0.0;
+  t_chisq_x2 = 0.0;
+  t_chisq_u2 = 0.0;
+  t_num_wire_x1 = 0.0;
+  t_num_wire_u1 = 0.0;
+  t_num_wire_x2 = 0.0;
+  t_num_wire_u2 = 0.0;
+  t_Pout = 0.0;
+  t_Eout = 0.0;
+  t_Ex = 0.0;
+  t_success_X1 = 0.0;
+  t_success_U1 = 0.0;
+  t_success_X2 = 0.0;
+  t_success_U2 = 0.0;
 
   return 1;
 }
