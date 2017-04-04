@@ -23,7 +23,7 @@ void histos() {
   TH1F *hpad2 = new TH1F("hpad2", "Paddle 2", 550, 100., 1200.);
   TH1F *hpad3 = new TH1F("hpad3", "Paddle 3", 1024, 0., 4096.);
 
-  TH1F *hX1pos = new TH1F("hX1pos", "X1 Position", 4000, -600., 600.);
+  TH1F *hX1pos = new TH1F("hX1pos", "X1 Position", 6000, -600., 600.);
   TH1F *hX1th = new TH1F("hX1th", "X1 Theta", 300, 20., 50.);
   TH1F *hX1flag = new TH1F("hX1flag", "X1 Flags", 7, 0., 7.);
   TH1F *hX1chisq = new TH1F("hX1chisq", "X1 Chi squared", 1000, 0., 1.);
